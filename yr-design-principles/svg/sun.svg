@@ -1,0 +1,51 @@
+<svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sun rays rendered behind the disc, with SMIL clockwise rotation -->
+  <!-- Long narrow rays at cardinal directions (N, E, S, W) -->
+  <!-- Short wide rays at diagonal directions (NE, SE, SW, NW) -->
+  <!-- Each ray is the same teardrop path, placed at its angle via child transform. -->
+  <!-- The group's animateTransform spins all of them together seamlessly. -->
+  <g>
+    <!-- Ray N (long, pointing up) -->
+    <path d="M339 204 C334 187 337 157 343 136 C347 124 350 112 350 112 C350 112 353 124 357 136 C363 157 366 187 361 204 C357 216 343 216 339 204Z" fill="#481581"/>
+    <!-- Ray E (long, pointing right) -->
+    <path d="M339 204 C334 187 337 157 343 136 C347 124 350 112 350 112 C350 112 353 124 357 136 C363 157 366 187 361 204 C357 216 343 216 339 204Z" fill="#481581" transform="rotate(90 350 350)"/>
+    <!-- Ray S (long, pointing down) -->
+    <path d="M339 204 C334 187 337 157 343 136 C347 124 350 112 350 112 C350 112 353 124 357 136 C363 157 366 187 361 204 C357 216 343 216 339 204Z" fill="#481581" transform="rotate(180 350 350)"/>
+    <!-- Ray W (long, pointing left) -->
+    <path d="M339 204 C334 187 337 157 343 136 C347 124 350 112 350 112 C350 112 353 124 357 136 C363 157 366 187 361 204 C357 216 343 216 339 204Z" fill="#481581" transform="rotate(270 350 350)"/>
+    <!-- Ray NE (short, wide) -->
+    <path d="M331 206 C323 191 324 169 334 151 C340 139 350 133 350 133 C350 133 360 139 366 151 C376 169 377 191 369 206 C363 218 337 218 331 206Z" fill="#481581" transform="rotate(45 350 350)"/>
+    <!-- Ray SE (short, wide) -->
+    <path d="M331 206 C323 191 324 169 334 151 C340 139 350 133 350 133 C350 133 360 139 366 151 C376 169 377 191 369 206 C363 218 337 218 331 206Z" fill="#481581" transform="rotate(135 350 350)"/>
+    <!-- Ray SW (short, wide) -->
+    <path d="M331 206 C323 191 324 169 334 151 C340 139 350 133 350 133 C350 133 360 139 366 151 C376 169 377 191 369 206 C363 218 337 218 331 206Z" fill="#481581" transform="rotate(225 350 350)"/>
+    <!-- Ray NW (short, wide) -->
+    <path d="M331 206 C323 191 324 169 334 151 C340 139 350 133 350 133 C350 133 360 139 366 151 C376 169 377 191 369 206 C363 218 337 218 331 206Z" fill="#481581" transform="rotate(315 350 350)"/>
+    <!-- Slow clockwise rotation — one full revolution every 22 seconds -->
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 350 350"
+      to="360 350 350"
+      dur="22s"
+      repeatCount="indefinite"
+    />
+  </g>
+
+  <!-- Solid sun disc elements rendered on top of rays -->
+
+  <!-- 1. Sun disc shadow — dark purple, offset 8 px down-right.
+       Peeks out ~20 px at bottom and right of the main body,
+       creating the same directional depth used in cloud.svg. -->
+  <path d="M358 218 C436 218 500 282 500 360 C500 438 436 502 358 502 C280 502 216 438 216 360 C216 282 280 218 358 218Z" fill="#481581"/>
+
+  <!-- 2. Sun disc main fill — light purple, organic 8-segment path.
+       Sits slightly up-left of the shadow, revealing the shadow rim
+       at the bottom and right edges (same layering trick as the cloud). -->
+  <path d="M350 220 C394 220 430 238 454 264 C478 290 490 322 488 354 C486 386 472 418 450 440 C428 462 392 480 350 482 C308 482 274 466 252 442 C230 418 216 386 216 354 C216 322 228 290 250 268 C272 246 312 222 350 220Z" fill="#C8A1F5"/>
+
+  <!-- 3. Sun crescent accent — dark purple, upper-right of disc.
+       Mirrors the cloud's crescent detail: a thin organic lens shape
+       that gives the disc surface dimension and a highlight effect. -->
+  <path d="M430 278 C450 302 452 336 436 364 C424 350 422 306 430 278Z" fill="#481581"/>
+</svg>
